@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="paneArticulo" prefHeight="523.0" prefWidth="850.0" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sbarquero.comparadorprecios.controlador.ArticulosController">
+    <children>
+        <SplitPane dividerPositions="0.35" layoutX="21.0" layoutY="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane fx:id="anchorPaneListaArticulos" minHeight="0.0" minWidth="0.0">
+                    <children>
+                  <TextField fx:id="txtBuscar" layoutX="12.0" layoutY="20.0" onKeyPressed="#onKeyPressedEnterBuscar" prefHeight="30.0" prefWidth="218.0" promptText="%txt.introduzca_busqueda" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="20.0" />
+                  <Button id="btnBuscar" fx:id="btnBuscar" accessibleHelp="Buscar" accessibleRoleDescription="Buscar " alignment="CENTER" layoutX="236.0" layoutY="20.0" maxHeight="30.0" maxWidth="45.0" minHeight="30.0" minWidth="45.0" mnemonicParsing="false" onAction="#onActionBotonBuscar" prefHeight="30.0" prefWidth="45.0" styleClass="botonIcono" text="B" textAlignment="CENTER" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="20.0" />
+                        <ListView fx:id="listViewArticulos" layoutX="14.0" layoutY="383.0" onMouseClicked="#onMouseClickedListaArticulos" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="60.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="554.0" prefWidth="681.0">
+                    <children>
+                            <Label layoutX="26.0" layoutY="29.0" text="%lbl.codigo" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="29.0" />
+                            <TextField fx:id="txtId" editable="false" layoutX="115.0" layoutY="24.0" prefHeight="30.0" prefWidth="129.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="24.0" />
+                            <Label layoutX="24.0" layoutY="79.0" text="%lbl.descripcion" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="79.0" />
+                            <TextField fx:id="txtDescripcion" layoutX="115.0" layoutY="74.0" promptText="%txt.introduzca_descripcion" style="-fx-font-weight: bold;" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="74.0" />
+                  <Label layoutX="19.0" layoutY="123.0" text="%lbl.codigo_barras" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="123.0" />
+                  <TextField fx:id="txtEan" layoutX="52.0" layoutY="163.0" prefHeight="30.0" prefWidth="147.0" promptText="%txt.introduzca_codigo_barra" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="163.0" />
+                  <ImageView fx:id="imgArticulo" fitHeight="221.0" fitWidth="269.0" layoutX="256.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="256.0" AnchorPane.topAnchor="117.0" />
+                  <JFXDatePicker fx:id="dateArticulo" defaultColor="#686868" editable="false" layoutX="26.0" layoutY="221.0" prefHeight="30.0" prefWidth="147.0" promptText="%txt.fecha" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="221.0" />
+                  <JFXTimePicker fx:id="timeArticulo" defaultColor="#686868" editable="false" layoutX="26.0" layoutY="272.0" prefHeight="30.0" prefWidth="147.0" promptText="%txt.hora" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="272.0" />
+                  <TableView fx:id="tableViewPrecios" layoutX="19.0" layoutY="351.0" onMouseClicked="#onMouseClickedPrecio" prefHeight="95.0" prefWidth="468.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="351.0">
+                    <columns>
+                      <TableColumn fx:id="columnId" prefWidth="60.0" style="-fx-alignment: top-right;" text="%lbl.id" />
+                      <TableColumn fx:id="columnPrecio" prefWidth="75.0" style="-fx-alignment: top-right;" text="%lbl.precio" />
+                        <TableColumn fx:id="columnTienda" prefWidth="161.0" text="%lbl.tienda" />
+                        <TableColumn fx:id="columnFecha" prefWidth="171.0" text="%lbl.fecha" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnNuevoPrecio" layoutX="495.0" layoutY="351.0" mnemonicParsing="false" onAction="#onActionBotonNuevoPrecio" prefHeight="20.0" prefWidth="30.0" styleClass="botonIcono" text="+" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="351.0" />
+                        <Button fx:id="btnNuevo" layoutX="24.0" layoutY="557.0" onAction="#onActionBotonNuevo" prefWidth="80.0" text="%btn.nuevo" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="24.0" />
+                        <Button fx:id="btnBorrar" layoutX="125.0" layoutY="557.0" onAction="#onActionBotonBorrar" prefWidth="80.0" text="%btn.borrar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="125.0" />
+                        <Button fx:id="btnGuardar" layoutX="407.0" layoutY="471.0" onAction="#onActionBotonGuardar" prefHeight="30.0" prefWidth="117.0" text="%btn.guardar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="24.0" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

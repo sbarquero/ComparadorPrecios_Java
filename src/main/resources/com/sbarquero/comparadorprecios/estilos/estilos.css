@@ -1,0 +1,96 @@
+/* estilos.css 
+ *
+ * @author Santiago Barquero López - 2º DAM <sbarquero AT gmail.com>
+ */
+
+
+/* La sección .root proporciona los colores predeterminados generales */
+
+.root {
+    /* El color base para los objetos */
+    /* -fx-base: #FFFFFF; */
+    /* Color de fondo derivado del color base */
+    -fx-background: derive(-fx-base, 49.9%);
+    /* Color para el interior de text boxes, password boxes, lists, trees y tables */
+    -fx-control-inner-background: derive(-fx-base, 140%);
+    /* Version de -fx-control-inner-background para filas alternativas */
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background, -10%);
+    /* Fuente por defecto seleccionada */
+    -fx-font-size: 14px;
+    /* -fx-font-family: "Palatino LinoType", "Times New Roman", Times, serif; */
+    /* -fx-dark-text-color: #3F1F0D; */
+    /* Color para el texto de tono oscuro */
+    /* -fx-mid-text-color: #271307; */
+    /* Color para el texto de tono medio */
+    /* -fx-light-text-color: #f8e4b6; */
+    /* Color para el texto de tono claro */
+    /* Color para el resaltado. Por ejemplo:  texto seleccionado, elementos seleccionados, etc. */
+    /* -fx-accent: #502c17; */
+    /* Color del botón por defecto, pero con un pequeño matiz. */
+    /* -fx-default-button: #3d2313; */
+    /* Color para el foco */
+    /* -fx-focus-color: #C3A660; */
+    /* -fx-faint-focus-color: #C3A660; */
+    /* Color de fondo para los elementos seleccionados pero que no tienen el foco */
+    -fx-selection-bar-non-focused: derive(-fx-base, 35%);
+}
+
+
+/* Imagen de fondo de la ventana principal */
+
+.imagenFondo {
+    /* -fx-background-image: url("../resources/images/background.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: cover; */
+}
+
+
+/* Etiqueta con el nombre de la ventana */
+
+#labelNombreVentana {
+    -fx-background-color: #4C4C4C;
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+
+/* Color para la barra del menú */
+
+MenuBar {
+    /* -fx-base: #C3A660; */
+}
+
+
+/* Personalización de los ComboBox */
+
+ComboBox {
+    /* -fx-base: #eed8a5;
+    -fx-control-inner-background: #fff3d6; */
+}
+
+
+/* Campos de fecha y hora de los Programas */
+
+JFXDatePicker,
+JFXTimePicker {
+    -fx-background-color: derive(-fx-background, 105%);
+    -fx-inner-border-color: #FF0000;
+    -fx-inner-border-style: solid;
+    -fx-inner-border-width: 2px;
+    -fx-padding: 0px 8px;
+}
+
+/* Botones con un carácter como icono */
+
+.botonIcono {
+    -fx-font-size: 22px;
+    -fx-padding: 0;
+    -fx-font-weight: bold
+}
+
+.negrita {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
