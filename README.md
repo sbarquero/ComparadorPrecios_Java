@@ -1,6 +1,6 @@
 # ComparadorPrecios_Java
 
-Proyecto **Apache NetBeans 11.3** de aplicación **Cliente de escritorio Java** para mi **Proyecto de Cicle 2º DAM**. La aplicación interacciona con la **web API ComparadorPrecios** [(Enlace Github)](https://github.com/sbarquero/ComparadorPrecios_WebAPI).
+Proyecto **Apache NetBeans 11.3** de aplicación **Cliente de escritorio Java** para mi **Proyecto de Ciclo 2º DAM**. La aplicación interacciona con la **web API ComparadorPrecios** [(Enlace Github)](https://github.com/sbarquero/ComparadorPrecios_WebAPI).
 
 ## Introducción
 
